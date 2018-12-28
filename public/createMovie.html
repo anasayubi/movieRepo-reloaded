@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Required libs -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+
+        <!-- Meta Data -->
+        <meta charset="UTF-8">
+        <title>MovieRepo</title>
+        
+        <!-- User generated files -->
+        <script src="index.js"></script>
+        <script src="createMovie.js"></script>
+    </head>
+    <body>
+        <div ng-app="app" ng-controller="CreateMovieController">
+            <form>
+                <h3 class="mx-auto" style="width: 270px; display: block;">Create Movie Record</h3>
+                Name: <input type="text" ng-model="name">
+                <br />
+                Year: <input type="text" ng-model="year">
+                <br />
+                Rating: <input type="text" ng-model="rating">
+                <br />
+                <input type="submit" value="Submit" ng-click="createMovie()">
+            </form>
+        </div>
+    </body>
+</html>

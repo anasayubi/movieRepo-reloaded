@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Required libs -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+
+        <!-- Meta Data -->
+        <meta charset="UTF-8">
+        <title>MovieRepo</title>
+        
+        <!-- User generated files -->
+        <script src="index.js"></script>
+        <script src="movieCollection.js"></script>
+        <script src="viewController.js"></script>
+        <script src="createMovie.js"></script>
+    </head>
+    <body>
+        <div ng-app="app" ng-controller="MovieCollectionTestingController">
+
+        </div>
+        <!-- <div ng-app="app" ng-controller="ViewController">
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Year</th> 
+                    <th>Rating</th>
+                    <th>Action</th>
+                </tr>
+                <tr ng-repeat="movie in movieCollection">
+                    <td>{{movie.name}}</td>
+                    <td>{{movie.year}}</td>
+                    <td>{{movie.rating}}</td>
+                    <td>
+                        <input type="button" value="Update" class="btn btn-sm btn-primary">
+                        <input type="button" value="Delete" class="btn btn-sm btn-danger" ng-click="deleteMovie(movie.id)">
+                    </td>
+                </tr> -->
+                <!-- Add movie with no index in movieCollections for testing -->
+                <!-- <tr>
+                    <td>Error</td>
+                    <td>2100</td>
+                    <td>2</td>
+                    <td>
+                        <input type="button" value="Update" class="btn btn-sm btn-primary">
+                        <input type="button" value="Delete" class="btn btn-sm btn-danger" ng-click="deleteMovie(-1)">
+                    </td>
+                </tr> -->
+                <!--  -->
+            <!-- </table>
+            <a class="mx-auto btn btn-primary" href="createMovie.html" role="button" 
+            style="width: 200px; display: block;">Create Movie</a> -->
+
+            <!-- <input type="button" value="Create Movie" class="mx-auto btn btn-primary" 
+            style="width: 200px; display: block;" href="createMovie.js"> -->
+        </div>
+    </body>
+</html>
