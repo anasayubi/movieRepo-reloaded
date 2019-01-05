@@ -94,11 +94,11 @@ function movieCollectionCreation(){
             err = new NoNameInMovieObjError();
             throw err;
         }
-        else if(!movieObj.year){
+        else if(!movieObj.year && !isNaN(movieObj.year)){
             err = new NoYearInMovieObjError();
             throw err;
         }
-        else if(!movieObj.rating){
+        else if(!movieObj.rating && !isNaN(movieObj.rating)){
             err = new NoRatingInMovieObjError();
             throw err;
         }
@@ -142,14 +142,15 @@ function movieCollectionCreation(){
     // public
     return {
         addMovie: function(movieObj){
-            console.log("Inside add movie");
+            console.log("inside addMovie");
             isMovieObjValid(movieObj);
             movieObj.id = movieCollection.length;
-            console.log("push into array")
+            // console.log("push into array")
             movieCollection.push(movieObj);
             window.localStorage.setItem("movieCollection", JSON.stringify(movieCollection));
         },
         removeMovie: function(id){
+            console.log("inside removeMovie");
             // Will hold the index in the array that contains movieId
             index = -1;
 
@@ -176,7 +177,7 @@ function movieCollectionCreation(){
             window.localStorage.setItem("movieCollection", JSON.stringify(movieCollection));
         },
         updateMovie: function(id, movieObj){
-            console.log("inside UpdateMovie");
+            console.log("inside updateMovie");
             isMovieObjValid(movieObj);
             this.removeMovie(id);
             movieObj.id = id;
@@ -188,12 +189,14 @@ function movieCollectionCreation(){
             console.log(movieCollection);
         },
         getMovies: function(){
+            console.log("inside getMovies");
             // console.log("len: " +  movieCollection.length);
             // console.log("[3]: " + movieCollection[3]);
 
             return movieCollection;
         },
         prestineMovies: function(){
+            console.log("inside prestineMovies");
             prestineMovieCollection();
             window.localStorage.setItem("movieCollection", JSON.stringify(movieCollection));
         }

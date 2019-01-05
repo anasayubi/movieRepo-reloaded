@@ -4,7 +4,7 @@
 
         <!-- Required libs -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
 
         <!-- Meta Data -->
         <meta charset="UTF-8">
@@ -21,10 +21,15 @@
             <form>
                 <h3 class="mx-auto" style="width: 270px; display: block;">Create Movie Record</h3>
                 Name: <input type="text" ng-model="name">
+                <span ng-show="noName">Required field</span>
                 <br />
                 Year: <input type="text" ng-model="year">
+                <span ng-show="noYear">Required field</span>
+                <span ng-show="invalidYear">Must be an integer in the range 1900-2100</span>
                 <br />
                 Rating: <input type="text" ng-model="rating">
+                <span ng-show="noRating">Required field</span>
+                <span ng-show="invalidRating">Must be a number in the range 1-5</span>
                 <br />
                 <input type="submit" value="Submit" ng-click="createMovie()">
             </form>
