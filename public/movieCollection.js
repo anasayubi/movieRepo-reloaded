@@ -1,4 +1,4 @@
-var app = angular.module('app', []);
+var app = angular.module('app');
 
 function movieCollectionCreation(){
     // private
@@ -142,8 +142,10 @@ function movieCollectionCreation(){
     // public
     return {
         addMovie: function(movieObj){
+            console.log("Inside add movie");
             isMovieObjValid(movieObj);
             movieObj.id = movieCollection.length;
+            console.log("push into array")
             movieCollection.push(movieObj);
             window.localStorage.setItem("movieCollection", JSON.stringify(movieCollection));
         },
@@ -174,6 +176,7 @@ function movieCollectionCreation(){
             window.localStorage.setItem("movieCollection", JSON.stringify(movieCollection));
         },
         updateMovie: function(id, movieObj){
+            console.log("inside UpdateMovie");
             isMovieObjValid(movieObj);
             this.removeMovie(id);
             movieObj.id = id;
@@ -181,9 +184,13 @@ function movieCollectionCreation(){
             window.localStorage.setItem("movieCollection", JSON.stringify(movieCollection));
         },
         viewMovies: function(){
+            console.log("inside viewMovies");
             console.log(movieCollection);
         },
         getMovies: function(){
+            // console.log("len: " +  movieCollection.length);
+            // console.log("[3]: " + movieCollection[3]);
+
             return movieCollection;
         },
         prestineMovies: function(){
@@ -195,16 +202,39 @@ function movieCollectionCreation(){
 
 app.factory("movieCollection", movieCollectionCreation);
 
-app.controller('MovieCollectionTestingController', function(movieCollection){
-    movieCollection.viewMovies();
+// app.controller('MovieCollectionTestingController', function(movieCollection){
+    
+    // console.log("1");
 
-    movieCollection.updateMovie(0, {
-        name: "Avators",
-        year: 2012,
-        rating: 4.8
-    });
+    // movieCollection.viewMovies();
 
-    movieCollection.viewMovies();
+    // console.log("2");
+
+    // movieCollection.updateMovie(0, {
+    //     name: "Avators",
+    //     year: 2012,
+    //     rating: 4.8
+    // });
+
+    // console.log("3");
+
+    // movieCollection.viewMovies();
+
+    // movieCollection.viewMovies();
+    // m = {name: "Robinson", year: 2038, rating: 3} 
+    // movieCollection.addMovie(m); // add robinson
+    // movieCollection.viewMovies();
+    // movieCollection.removeMovie(1); // remove titanic
+    // movieCollection.viewMovies();
+
+    // movieCollection.prestineMovies();
+    // console.log(movieCollection.getMovies()); // must be presetine
+    // window.setTimeout(function(){
+    //     1 + 1;
+    // }, 5000);
+    // m = {name: "Robinson", year: 2038, rating: 3} 
+    // movieCollection.addMovie(m); 
+    // console.log(movieCollection.getMovies()); // must have robinson
 
     // movieCollection.removeMovie(3);
 
@@ -227,4 +257,4 @@ app.controller('MovieCollectionTestingController', function(movieCollection){
     // movieCollection.prestineMovies();
 
     // movieCollection.viewMovies();
-});
+// });

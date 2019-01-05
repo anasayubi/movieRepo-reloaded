@@ -17,10 +17,7 @@
         <script src="createMovie.js"></script>
     </head>
     <body>
-        <div ng-app="app" ng-controller="MovieCollectionTestingController">
-
-        </div>
-        <!-- <div ng-app="app" ng-controller="ViewController">
+        <div ng-app="app" ng-controller="ViewController">
             <table class="table">
                 <tr>
                     <th>Name</th>
@@ -28,32 +25,18 @@
                     <th>Rating</th>
                     <th>Action</th>
                 </tr>
-                <tr ng-repeat="movie in movieCollection">
+                <tr ng-repeat="movie in movieCollection.getMovies()">
                     <td>{{movie.name}}</td>
                     <td>{{movie.year}}</td>
                     <td>{{movie.rating}}</td>
                     <td>
                         <input type="button" value="Update" class="btn btn-sm btn-primary">
-                        <input type="button" value="Delete" class="btn btn-sm btn-danger" ng-click="deleteMovie(movie.id)">
+                        <input type="button" value="Delete" class="btn btn-sm btn-danger" ng-click="movieCollection.removeMovie(movie.id)">
                     </td>
-                </tr> -->
-                <!-- Add movie with no index in movieCollections for testing -->
-                <!-- <tr>
-                    <td>Error</td>
-                    <td>2100</td>
-                    <td>2</td>
-                    <td>
-                        <input type="button" value="Update" class="btn btn-sm btn-primary">
-                        <input type="button" value="Delete" class="btn btn-sm btn-danger" ng-click="deleteMovie(-1)">
-                    </td>
-                </tr> -->
-                <!--  -->
-            <!-- </table>
+                </tr>
+            </table>
             <a class="mx-auto btn btn-primary" href="createMovie.html" role="button" 
-            style="width: 200px; display: block;">Create Movie</a> -->
-
-            <!-- <input type="button" value="Create Movie" class="mx-auto btn btn-primary" 
-            style="width: 200px; display: block;" href="createMovie.js"> -->
+            style="width: 200px; display: block;">Create Movie</a>
         </div>
     </body>
 </html>

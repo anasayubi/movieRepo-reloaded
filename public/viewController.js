@@ -1,3 +1,3 @@
-app.controller('ViewController', function($scope){
-    // $scope.movieCollection = movieCollection;
+app.controller('ViewController', function($scope, movieCollection){
+    $scope.movieCollection = movieCollection;
 });
