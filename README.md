@@ -6,3 +6,8 @@ To start serving static files run:
 `$ http-server`
 
 This will statically serve files from the public directory
+
+### To-Do:
+- Make Create Movie form pleasent - bootstrap
+- Use FormGroup
+- Add update form

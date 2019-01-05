@@ -35,8 +35,14 @@
                     </td>
                 </tr>
             </table>
-            <a class="mx-auto btn btn-primary" href="createMovie.html" role="button" 
-            style="width: 200px; display: block;">Create Movie</a>
+            <div class="mx-auto" style="width: 405px;">
+                <a class="btn btn-primary" href="createMovie.html" role="button" 
+                style="width: 200px;">Create Movie</a>
+                <input type="button" class="btn btn-primary" ng-click="prestineMovies()" value="Prestine Movies"
+                style="width: 200px;">
+                <!-- <a class="btn btn-primary" ng-click="movieCollection.prestineMovies()" href="/" role="button" 
+                style="width: 200px;">Prestine Movies</a> -->
+            </div>
         </div>
     </body>
 </html>
